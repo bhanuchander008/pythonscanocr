@@ -1,0 +1,30 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+#  drving HANDLERS
+
+ post_driving:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/driving.log
+
+
+
+
+
+
+#LOGGERS
+
+# PASSPORT TABLE LOGGERS
+
+loggers:
+
+ post_licence:
+   level: DEBUG
+   handlers: [post_driving]
+   propagate: True
